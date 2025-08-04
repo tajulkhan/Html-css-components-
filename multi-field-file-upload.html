@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiple File Uploads</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    .file-upload-container {
+      margin-bottom: 20px;
+    }
+
+    .file-label {
+      margin-bottom: 6px;
+      display: block;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .custom-file-upload {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 300px;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .custom-file-upload span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 220px;
+    }
+
+    .upload-icon {
+      font-size: 18px;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Report Card Upload -->
+  <div class="file-upload-container">
+    <label class="file-label" for="reportCard">Recent Report Card</label>
+    <label class="custom-file-upload" for="reportCard">
+      <span id="file-name-reportCard">No file selected</span>
+      <span class="upload-icon">⬆️</span>
+    </label>
+    <input type="file" id="reportCard" onchange="updateFileName(this, 'file-name-reportCard')">
+  </div>
+
+  <!-- 2. Student Photograph Upload -->
+  <div class="file-upload-container">
+    <label class="file-label" for="studentPhoto">Recent Photograph of student</label>
+    <label class="custom-file-upload" for="studentPhoto">
+      <span id="file-name-studentPhoto">No file selected</span>
+      <span class="upload-icon">⬆️</span>
+    </label>
+    <input type="file" id="studentPhoto" onchange="updateFileName(this, 'file-name-studentPhoto')">
+  </div>
+
+  <!-- 3. ID Proof Upload -->
+  <div class="file-upload-container">
+    <label class="file-label" for="idProof">ID Proof</label>
+    <label class="custom-file-upload" for="idProof">
+      <span id="file-name-idProof">No file selected</span>
+      <span class="upload-icon">⬆️</span>
+    </label>
+    <input type="file" id="idProof" onchange="updateFileName(this, 'file-name-idProof')">
+  </div>
+
+  <script>
+    function updateFileName(input, spanId) {
+      const fileName = input.files[0] ? input.files[0].name : "No file selected";
+      document.getElementById(spanId).textContent = fileName;
+    }
+  </script>
+
+</body>
+</html>
