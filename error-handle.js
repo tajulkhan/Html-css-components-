@@ -24,8 +24,6 @@ form.addEventListener("change", (e) => {
     clearError(e.target);
   }
 });
-
-
 /*
     The code is mostly complete for clearing error messages on input/change events.
     However, make sure:
@@ -33,7 +31,7 @@ form.addEventListener("change", (e) => {
     2. The CSS classes `.error`, `.error-message`, and `.error-message-radio` exist in your styles.
     3. The HTML structure matches what `clearError` expects (i.e., `.form-group` wrapping inputs and error messages).
     4. You may want to debounce or throttle the event handlers if your form is large.
-
+    
     Example of defining `form`:
     const form = document.querySelector('form'); // or use your form's selector
 */
