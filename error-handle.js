@@ -12,3 +12,15 @@ function clearError(input) {
     if (radioErr) radioErr.style.display = "none";
   }
 }
+
+// --- Clear errors on input/change ---
+form.addEventListener("input", (e) => {
+  if (e.target.matches("input, select, textarea")) {
+    clearError(e.target);
+  }
+});
+form.addEventListener("change", (e) => {
+  if (e.target.matches("input, select, textarea")) {
+    clearError(e.target);
+  }
+});
