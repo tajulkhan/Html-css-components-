@@ -1,7 +1,4 @@
 // Input auto clear error message 
-
-
-
 // Initial function 
 function clearError(input) {
   if (!input) return;
